@@ -1,0 +1,6 @@
+Menù de "La Pergola":
+
+Scaloppine al vino bianco|Scamone|Manzo
+	15.0 €
+Brunello tenuta Nuova|Brunello di Montalcino|Rosso|13.0°
+	24.0 €

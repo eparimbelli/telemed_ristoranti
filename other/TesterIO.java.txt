@@ -1,0 +1,48 @@
+package test;
+
+import alimenti.bevande.Vino;
+import alimenti.cibi.Carne;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import menu.Menu;
+import ristoranti.Ristorante;
+
+/**
+ *
+ * @author Matteo Gabetta <matteo.gabetta at unipv.it>
+ */
+public class TesterIO {
+
+    public static void main(String[] args) throws IOException {
+        FileReader fr = new FileReader("files/menu1.txt");
+        BufferedReader br = new BufferedReader(fr);
+
+        Menu menu1 = new Menu();
+
+        while (br.ready()) {
+            String line = br.readLine();
+            String[] lineSplit = line.split("\t");
+
+            switch (Integer.parseInt(lineSplit[0])) {
+                case 0:
+                    Carne c = new Carne(lineSplit[1], lineSplit[2], lineSplit[3]);
+                    menu1.aggiungi(c, Double.parseDouble(lineSplit[4]));
+                    break;
+                case 1:
+                    Vino v = new Vino(lineSplit[1], Double.parseDouble(lineSplit[2]), lineSplit[3], lineSplit[4]);
+                    menu1.aggiungi(v, Double.parseDouble(lineSplit[5]));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        br.close();
+        fr.close();
+
+        Ristorante rist = new Ristorante("Osteria Francescana");
+        rist.cambiaMenu(menu1);
+        System.out.println(rist.stampaMenu());
+    }
+}
