@@ -9,6 +9,7 @@ import alimenti.bevande.Vino;
 import alimenti.bevande.VinoBio;
 import alimenti.cibi.Carne;
 import alimenti.cibi.Kebab;
+import java.io.File;
 import menu.Menu;
 import ristoranti.Chiosco;
 import ristoranti.Enoteca;
@@ -42,6 +43,7 @@ public class TestCibiRistoranti {
         EsercizioRistorazione becCo = new Enoteca("Il bevitor cortese");
         EsercizioRistorazione malHy = new EnotecaBiologica("Dai maledetti hyppies");
         EsercizioRistorazione keb = new Ristorante("Istambul Kebab");
+        EsercizioRistorazione lett = new Ristorante("Il Lettore");
         
         //MENU
         Menu mcMenu = new Menu();
@@ -130,7 +132,7 @@ public class TestCibiRistoranti {
         System.out.println(becCo.stampaMenu());
 
         System.out.println("\n-------------------------\n");
-        
+        System.out.println("CAMBIO MENU' 2\n");
         malHy.cambiaMenu(mcMenu);
         System.out.println(malHy.stampaMenu());
 
@@ -143,5 +145,17 @@ public class TestCibiRistoranti {
 //        ch.aggiungiAlMenu(bigMac, 2.6);
         
         System.out.println(ch.stampaMenu());
+        
+        System.out.println("\n-------------------------\n");
+
+        
+        System.out.println("IL LETTORE\n");
+        Menu menuDaFile = new Menu();
+        menuDaFile.popola(new File("files/menu1.txt"));
+        lett.cambiaMenu(menuDaFile);
+        
+        System.out.println(lett.stampaMenu());
+        
+        System.out.println("\n-------------------------\n");
     }
 }
