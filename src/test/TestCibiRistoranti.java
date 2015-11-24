@@ -4,6 +4,7 @@
  */
 package test;
 
+import alimenti.Alimento;
 import alimenti.bevande.Vino;
 import alimenti.bevande.VinoBio;
 import alimenti.cibi.Carne;
@@ -12,6 +13,7 @@ import menu.Menu;
 import ristoranti.Chiosco;
 import ristoranti.Enoteca;
 import ristoranti.EnotecaBiologica;
+import ristoranti.EsercizioRistorazione;
 import ristoranti.Ristorante;
 import ristoranti.RistoranteBiologico;
 
@@ -27,19 +29,19 @@ public class TestCibiRistoranti {
      */
     public static void main(String[] args){
         //ALIMENTI
-        Vino lambruscoDC = new Vino("Lambrusco del Castello", 13.5, "Lambrusco", "Rosso");
-        VinoBio bonardaBio = new VinoBio("Bonarda Oltrepò", 14, "Bonarda", "Rosso");
-        VinoBio barberaBio = new VinoBio("Barbera Oltrepò", 13.5, "Barbera", "Rosso");
-        Carne ham = new Carne("Scamone", "Chianina", "Hamburger");
-        Kebab keTu = new Kebab(true, false, "Agnello", "Kebab Turco");
-        Carne bigMac = new Carne("Ogni parte","Ogni bestia","Big Mac");
+        Alimento lambruscoDC = new Vino("Lambrusco del Castello", 13.5, "Lambrusco", "Rosso");
+        Alimento bonardaBio = new VinoBio("Bonarda Oltrepò", 14, "Bonarda", "Rosso");
+        Alimento barberaBio = new VinoBio("Barbera Oltrepò", 13.5, "Barbera", "Rosso");
+        Alimento ham = new Carne("Scamone", "Chianina", "Hamburger");
+        Alimento keTu = new Kebab(true, false, "Agnello", "Kebab Turco");
+        Alimento bigMac = new Carne("Ogni parte","Ogni bestia","Big Mac");
 
         //ESERCIZI DI RISTORAZIONE
-        Ristorante laPerg = new Ristorante("La Pergola");
-        RistoranteBiologico vecFat = new RistoranteBiologico("La veccchia fattoria");
-        Enoteca becCo = new Enoteca("Il bevitor cortese");
-        EnotecaBiologica malHy = new EnotecaBiologica("Dai maledetti hyppies");
-        Ristorante keb = new Ristorante("Istambul Kebab");
+        EsercizioRistorazione laPerg = new Ristorante("La Pergola");
+        EsercizioRistorazione vecFat = new RistoranteBiologico("La veccchia fattoria");
+        EsercizioRistorazione becCo = new Enoteca("Il bevitor cortese");
+        EsercizioRistorazione malHy = new EnotecaBiologica("Dai maledetti hyppies");
+        EsercizioRistorazione keb = new Ristorante("Istambul Kebab");
         
         //MENU
         Menu mcMenu = new Menu();
