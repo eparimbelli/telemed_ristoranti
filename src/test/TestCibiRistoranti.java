@@ -46,6 +46,7 @@ public class TestCibiRistoranti {
         //MENU
         Menu mcMenu = new Menu();
         mcMenu.aggiungi(bigMac, 1);
+        mcMenu.aggiungi(lambruscoDC, 1);
 
         
         System.out.println("RISTORANTE\n");
@@ -67,22 +68,21 @@ public class TestCibiRistoranti {
 
 
         System.out.println("RISTORANTE BIOLOGICO\n");
-//        vecFat.aggiungiAlMenu(ham,6);
-//        vecFat.aggiungiAlMenu(lambruscoDC,8);
+//        vecFat.aggiungiAlMenu(ham,6); //fails notBio
+//        vecFat.aggiungiAlMenu(lambruscoDC,8); //fials notBio
         vecFat.aggiungiAlMenu(bonardaBio,14);
 
         System.out.println(vecFat.stampaMenu());
 
-        vecFat.togliDalMenu(ham);
-
-        System.out.println(vecFat.stampaMenu());
+//        vecFat.togliDalMenu(ham);
+//        System.out.println(vecFat.stampaMenu());
 
 
         System.out.println("\n-------------------------\n");
 
 
         System.out.println("ENOTECA\n");
-//        becCo.aggiungiAlMenu(ham,3);
+//        becCo.aggiungiAlMenu(ham,3); //fails notWine
         becCo.aggiungiAlMenu(lambruscoDC,5);
         becCo.aggiungiAlMenu(bonardaBio,7);
 
@@ -121,10 +121,19 @@ public class TestCibiRistoranti {
 
         
         System.out.println("CAMBIO MENU'\n");
-        laPerg.cambiaMenu(mcMenu);
-        System.out.println(laPerg.stampaMenu());
         
+        //try this at home.... should work OK
+//        laPerg.cambiaMenu(mcMenu);
+//        System.out.println(laPerg.stampaMenu());
         
+        becCo.cambiaMenu(mcMenu);
+        System.out.println(becCo.stampaMenu());
+
+        System.out.println("\n-------------------------\n");
+        
+        malHy.cambiaMenu(mcMenu);
+        System.out.println(malHy.stampaMenu());
+
         System.out.println("\n-------------------------\n");
 
         

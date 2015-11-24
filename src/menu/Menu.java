@@ -125,4 +125,9 @@ public class Menu {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public List<ElementoMenu> getLista() {
+        return lista;
+    }
+    
 }
